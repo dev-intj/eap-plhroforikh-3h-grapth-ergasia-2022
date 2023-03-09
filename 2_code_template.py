@@ -5,29 +5,24 @@ class Camera:  # Κλάση Camera
         self.operation = operation
         self.zoom = zoom
         self.night_vision = night_vision
-        pass
 
     # Ζητείται να δημιουργήσετε τη μέθοδο που ενεργοποιεί ή απενεργοποιεί την Camera
     def power(self):
         self.operation = not self.operation
-        pass
 
     # Ζητείται να δημιουργήσετε τη μέθοδο που αυξάνει το zoom της Camera
     def zoomUp(self):
         if (self.zoom + 1 != 11):
             self.zoom += 1
-        pass
 
     # Ζητείται να δημιουργήσετε τη μέθοδο που μειώνει το zoom της Camera
     def zoomDown(self):
         if (self.zoom - 1 != - 1):
             self.zoom -= 1
-        pass
 
     # Ζητείται να δημιουργήσετε τη μέθοδο που ενεργοποιεί ή απενεργοποιεί τη λειτουργία νυχτερινής όρασης της Camera
     def nightVision(self):
         self.night_vision = not self.night_vision
-        pass
 
     # Μέθοδος αποτύπωσης των συγκεντρωτικών πληροφοριών για όλες τις λειτουργίες της Camera
     def __str__(self):
@@ -52,12 +47,10 @@ class Panel():  # Κλάση πίνακα ελέγχου
         self.items.append(eisodos)
         self.items.append(apothiki)
         self.camera = None
-        pass
 
     # Ζητείται να δημιουργήσετε τη μέθοδο που επιτρέπει στον χρήστη να επιλέξει τη Camera την οποία θα ελέγξει
     def select_camera(self, index):
         self.camera = self.items[index]
-        pass
 
     # Mέθοδος για έλεγχο της επιλεγμένης Camera (power, zoom, night_vision)
     def control_panel(self):

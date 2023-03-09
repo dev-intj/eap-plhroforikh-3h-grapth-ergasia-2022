@@ -17,7 +17,7 @@ class BookStore:
                 print(newBook, '.(Ανεπιτυχής προσθήκη !)')
 
         else:
-            print('something went wrong with one of the values', )
+            print('something went wrong with one of the values')
 
     # Αναζήτηση βιβλίων με όνομα και επώνυμο του συγγραφέα
     def searchBooksByAuthor(self, author=None):
@@ -28,7 +28,7 @@ class BookStore:
         return result
 
     # Διαγραφή βιβλίου με βάση το ISBN
-    def deleteBookWithISBN(self, isbn=None):
+    def deleteBook(self, isbn=None):
         result = []
         for idx, i in enumerate(self.items):
             if isbn == i.isbn:
@@ -36,19 +36,21 @@ class BookStore:
                 self.items.pop(idx)
         return result
 
+    # Εκτύπωση λίστας των βιβλίων
     def __repr__(self):
         return ('Πλήθος βιβλίων: {}\n{}').format(len(self.items), '\n'.join(''.join(str(l)) for l in self.items))
 
 
 class Book:
+    # Αρχικοποίηση βιβλίου
     def __init__(self, title, author, year, price, isbn):
         self.title = title
         self.author = author
         self.year = year
         self.price = price
         self.isbn = isbn
-        pass  # Αρχικοποίηση βιβλίου
 
+    # Εκτύπωση βιβλίου
     def __repr__(self):
         return ('Βιβλίο: {}, Συγγραφέας: {}, Έτος: {}, Τιµή: {}€, ISBN: {}').format(self.title, self.author, self.year, self.price, self.isbn)
 
@@ -83,7 +85,7 @@ if __name__ == "__main__":
     print("\n2) Διαγραφή βιβλίου με βάση το ISBN\n===================================")
 
     deleteWithISBN = input("Πληκτρολογήστε ISBN:")
-    bs.deleteBookWithISBN(deleteWithISBN)
+    bs.deleteBook(deleteWithISBN)
 
     print("\n3) Εκτύπωση όλων των διαθέσιμων βιβλίων με όλη την σχετική πληροφορία\n=====================================================================")
     print(bs)
